@@ -1,0 +1,113 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <EditText
+        android:id="@+id/search2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search emergency agencies..."
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:padding="10dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/emergencyUpdates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Latest emergency updates will appear here..."
+        android:background="@android:color/holo_red_light"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:layout_below="@id/search2"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/emergencyCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/emergencyUpdates"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/fireEmergency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Fire"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/medicalEmergency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Medical"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/policeEmergency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Police"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/agencyListView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/emergencyCategories"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        android:dividerHeight="1dp"/>
+
+
+
+    <!-- Trigger Emergency Alert Button -->
+    <Button
+        android:id="@+id/emergencyAlertButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="Trigger Emergency Alert"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_reportIncident"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_dialog_alert"
+        android:backgroundTint="@color/white"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"/>
+
+</RelativeLayout>

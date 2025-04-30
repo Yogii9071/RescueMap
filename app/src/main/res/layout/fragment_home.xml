@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search for rescue agencies..."
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:padding="10dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:layout_margin="8dp"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/realTimeUpdates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Real-time updates will appear here..."
+        android:background="@android:color/holo_red_light"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:layout_below="@id/search"
+        android:layout_margin="8dp"/>
+
+
+    <TextView
+        android:id="@+id/weatherInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Weather: Loading... | Alerts: None"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:layout_below="@id/realTimeUpdates"
+        android:layout_margin="8dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/agencyList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@id/emergencyButton"
+        android:layout_marginBottom="16dp"/>
+
+
+    <Button
+        android:id="@+id/emergencyButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emergency Help"
+        android:backgroundTint="@color/your_true_purple"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_reportIncident1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_dialog_alert"
+        android:backgroundTint="#2B9D9B"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"/>
+
+</RelativeLayout>
